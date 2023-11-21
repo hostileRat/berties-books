@@ -65,7 +65,7 @@ module.exports = function (app, shopData) {
 
   app.post("/bookadded", function (req, res) {
     if (typeof req.body.price != Number || typeof req.body.name != String) {
-      res.redirect("/addbook");
+      res.redirect("addbook");
     }
 
     // saving data in database
