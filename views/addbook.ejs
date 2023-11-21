@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add book to <%=shopName%></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1>Register for <%=shopName%></h1>
+    <form method="POST" action="/bookadded">
+      <p>
+        Name:
+        <input id="name" type="text" name="name" value="Name of book" />
+      </p>
+      <p>
+        Price:
+        <input id="price" type="text" name="price" value="Price of book" />
+      </p>
+      <input type="submit" value="Add Book" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bertie's Books</title>
+  </head>
+  <body>
+    <h1>Bertie's Books</h1>
+    <h2><%= heading %></h2>
+    <ul>
+      <% for (let book of availableBooks) { %>
+      <li><%= `${book.name} £${book.price}` %></li>
+      <% } %>
+    </ul>
+  </body>
+</html>
