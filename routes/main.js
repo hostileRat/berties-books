@@ -64,20 +64,23 @@ module.exports = function (app, shopData) {
   });
 
   app.post("/bookadded", function (req, res) {
-    if (typeof req.body.price != Number || typeof req.body.name != String) {
+    if (
+      typeof req.body.price !== "number" ||
+      typeof req.body.name !== "string"
+    ) {
       res.redirect("addbook");
     }
 
-    // saving data in database
+    // saving data in the database
     let sqlquery = "INSERT INTO books (name, price) VALUES (?,?)";
-    // execute sql query
+    // execute SQL query
     let newrecord = [req.body.name, req.body.price];
     db.query(sqlquery, newrecord, (err, result) => {
       if (err) {
         return console.error(err.message);
       } else {
         res.send(
-          " This book is added to database, name: " +
+          " This book is added to the database, name: " +
             req.body.name +
             " price " +
             req.body.price
