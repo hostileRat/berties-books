@@ -53,9 +53,7 @@ module.exports = function (app, shopData) {
         availableBooks: result,
         heading: "Here are the books that we sell",
       });
-      // console.log(searchResult);
       res.render("list.ejs", searchResult);
-      // console.log(searchResult.availableBooks[0].name);
     });
   });
 
