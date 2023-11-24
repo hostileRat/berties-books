@@ -11,7 +11,7 @@ module.exports = function (app, shopData) {
   });
   app.get("/search-result", function (req, res) {
     //searching in the database
-    let sqlquery = `SELECT * FROM books WHERE name = '${req.query.keyword}'`;
+    let sqlquery = `SELECT * FROM books WHERE LOWER(name) LIKE LOWER('%${req.query.keyword}%')`;
     // Execute query
     db.query(sqlquery, (err, result) => {
       if (err) {
